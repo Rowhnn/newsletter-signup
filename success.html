@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Notification</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .offcanvas-custom {
+        max-width: 400px;
+        border-radius: 0.75rem;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+      }
+      .success-icon {
+        font-size: 3rem;
+        color: #198754;
+      }
+      .btn-close-custom {
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        color: #198754;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Offcanvas Success Notification -->
+    <div
+      class="offcanvas offcanvas-start offcanvas-custom show"
+      tabindex="-1"
+      id="offcanvasSuccess"
+      aria-labelledby="offcanvasSuccessLabel"
+      style="visibility: visible; position: static"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h5
+          class="offcanvas-title d-flex align-items-center"
+          id="offcanvasSuccessLabel"
+        >
+          <span class="success-icon me-2">&#10004;</span> Success
+        </h5>
+        <!-- Uncomment to enable close button if needed -->
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+      </div>
+      <div class="offcanvas-body text-center">
+        <p class="text-success fw-semibold fs-5 mb-3">
+          Successfully subscribed!
+        </p>
+        <p class="text-muted mb-4">Thank you for joining our community.</p>
+      </div>
+    </div>
+  </body>
+</html>
