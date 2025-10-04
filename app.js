@@ -4,6 +4,9 @@ const app = express();
 const port = 3000;
 const https = require("https");
 
+require("dotenv").config();
+const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public")); //makes me able to access to  static file through relative url
 
@@ -37,7 +40,7 @@ app.post("/", (req, res) => {
   const url = "https://us4.api.mailchimp.com/3.0/lists/ce2129b249";
   const options = {
     method: "POST",
-    auth: "rohan9:5a5c5a9a51aaffc60423c1a7d3b385f1-us4",
+    auth: "rohan9:mailchimpApiKey",
   };
   const request = https.request(url, options, function (response) {
     if (response.statusCode === 200) {
@@ -57,12 +60,6 @@ app.post("/", (req, res) => {
 app.post("/failure", (req, res) => {
   res.redirect("/");
 });
-
-//API key-
-// 5a5c5a9a51aaffc60423c1a7d3b385f1
-
-//List id-
-//ce2129b249
 
 // curl -X POST \
 //   https://${dc}.api.mailchimp.com/3.0/lists \
